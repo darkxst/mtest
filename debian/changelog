@@ -1,52 +1,12 @@
-mutter (3.12.2-0ubuntu1~trusty1) trusty; urgency=medium
+mutter (3.12.2-0ubuntu1~utopic2) UNRELEASED; urgency=medium
 
+  * Merge ubuntu packaging
   * New upstream release
   * debian/watch: watch for stable releases
-
- -- Tim Lunn <tim@feathertop.org>  Fri, 16 May 2014 08:12:29 +1000
-
-mutter (3.12.1-0ubuntu1~trusty1) trusty; urgency=medium
-
-  * New upstream release
-
- -- Tim Lunn <tim@feathertop.org>  Sun, 27 Apr 2014 11:09:07 +1000
-
-mutter (3.12.0-0ubuntu1~trusty1) trusty; urgency=medium
-
-  * New upstream release
-  
-  [ Sjoerd Simons ]
-  * debian/patches/prevent-double-lock-deadlock.patch:
-    + Added. Don't call X functions that lock the display in code paths that
-      have already locked the display if X threads have been initialized
-      (bgo#704101)
-
- -- Tim Lunn <tim@feathertop.org>  Tue, 01 Apr 2014 11:15:16 +1100
-
-mutter (3.11.92-0ubuntu1~trusty1) trusty; urgency=medium
-
-  * New upstream release
-
- -- Tim Lunn <tim@feathertop.org>  Sat, 22 Mar 2014 12:56:32 +1100
-
-mutter (3.11.90-0ubuntu1~trusty2) trusty; urgency=medium
-
-  * New upstream release
-
- -- Tim Lunn <tim@feathertop.org>  Tue, 25 Feb 2014 17:53:13 +1100
-
-mutter (3.11.5-0ubuntu1~trusty1) trusty; urgency=medium
-
-  * New upstream release
-
- -- Tim Lunn <tim@feathertop.org>  Sat, 08 Feb 2014 09:30:29 +1100
-
-mutter (3.11.4-0ubuntu1~trusty2) trusty; urgency=medium
-
-  [ Tim Lunn ]
-  * New upstream release
-  * debian/patches/ git_revert_cogl_changes-*.patch:
-    - Revert cogl API breaks
+  * debian/control.in:
+    - Bump build-dep on libcogl-dev (>= 1.17.1), gsettings-desktop-schemas-dev (>= 3.11.2)
+      libgnome-desktop-3-dev (>= 3.10), libupower-glib-dev (>= 0.99.0),
+    - bump library to libmutter0d
 
   [ Rico Tzschichholz ]
   * debian/control.in:
@@ -56,95 +16,133 @@ mutter (3.11.4-0ubuntu1~trusty2) trusty; urgency=medium
   * debian/patches:
     - Drop obsolete patch files
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Sun, 19 Jan 2014 09:45:39 +0100
+  [ Sjoerd Simons ]
+  * debian/patches/prevent-double-lock-deadlock.patch:
+    + Added. Don't call X functions that lock the display in code paths that
+      have already locked the display if X threads have been initialized
+      (bgo#704101)
 
-mutter (3.11.3-0ubuntu1~trusty1) trusty; urgency=medium
+ -- Tim Lunn <tim@feathertop.org>  Thu, 22 May 2014 06:18:10 +1000
+
+mutter (3.10.4-0ubuntu4) utopic; urgency=medium
+
+  * debian/patches/git-fix-crash-on-hotplug-*.patch:
+    - Backport crasher fix from upstream git (LP: #1319897, BGO#725637)
+
+ -- Marius Gedminas <marius@gedmin.as>  Fri, 16 May 2014 18:08:32 +0300
+
+mutter (3.10.4-0ubuntu3) utopic; urgency=high
+
+  * debian/patches/0001-Update-for-Cogl-API-breaks.patch: cherry pick
+    patch from upstream to fix FTBFS against cogl20.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sun, 27 Apr 2014 00:00:49 +0100
+
+mutter (3.10.4-0ubuntu2) trusty; urgency=medium
+
+  * debian/patches/git_ignore_error_when_settings_primary.patch (LP: #1288572) 
+
+ -- Tim Lunn <tim@feathertop.org>  Wed, 19 Mar 2014 08:16:08 +1100
+
+mutter (3.10.4-0ubuntu1) trusty; urgency=medium
 
   * New upstream release
+  * debian/patches/git_fix_xrandr_backlight.patch: Dropped, included
+    in the new version
 
- -- Tim Lunn <tim@feathertop.org>  Fri, 27 Dec 2013 12:02:07 +1100
+ -- Tim Lunn <tim@feathertop.org>  Thu, 20 Feb 2014 17:16:01 +1100
 
-mutter (3.11.2-0ubuntu1~trusty3) trusty; urgency=medium
+mutter (3.10.3-0ubuntu3) trusty; urgency=medium
 
-  * debian/control.in: bump b-d on upower 
-
- -- Tim Lunn <tim@feathertop.org>  Sun, 01 Dec 2013 15:21:13 +1100
-
-mutter (3.11.2-0ubuntu1~trusty2) trusty; urgency=medium
-
-  * New upstream release
-  * debian/control.in: 
-    - Bump bd on gnome-desktop-3
-    - bump to libmutter0d
   * debian/patches:
-    - revert_upower_api_changes.patch: revert changes for
-      new upower, this can be dropped once upower is updated
-    - drop reverted cogl patchs and rebuild against cogl 1.16
+    - remove unused git patches
+    - git_fix_xrandr_backlight.patch, fix backlight not working on various
+      GPU's (LP: #947919)
 
- -- Tim Lunn <tim@feathertop.org>  Wed, 13 Nov 2013 18:28:53 +1100
+ -- Tim Lunn <tim@feathertop.org>  Thu, 06 Feb 2014 20:01:34 +1100
 
-mutter (3.10.1.1-0ubuntu1~saucy1) saucy; urgency=medium
+mutter (3.10.3-0ubuntu2) trusty; urgency=medium
 
-  * New upstream release
-  * 0003-Revert-meta-window-actor-Throttle-obscured-frame-syn.patch: Refreshed
- -- Tim Lunn <tim@feathertop.org>  Tue, 22 Oct 2013 16:38:17 +1100
+  * Add Replaces for previous libmutter sonames, so that the library
+    upgrades properly.
 
-mutter (3.10.0-0ubuntu1~saucy1) saucy; urgency=medium
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 22 Jan 2014 14:12:56 -0800
 
-  * New upstream release
+mutter (3.10.3-0ubuntu1) trusty; urgency=medium
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 24 Sep 2013 17:57:41 +0200
+  * New upstream release (LP: #1269916)
+  * Merge with Debian. Remaining changes:
+    - debian/patches/04_ignore_shadow_and_padding.patch:
+      + Silently ignore padding and shadow tags (for light-themes)
+    - debian/control.in: Don't depend on gnome-desktop3 3.10
 
-mutter (3.9.92-0ubuntu1~saucy1.1) saucy; urgency=medium
+ -- Tim Lunn <tim@feathertop.org>  Sun, 29 Dec 2013 09:57:51 +1100
 
-  * New upstream release
-  * debian/patches/0009-Revert-window-actor-conservative-volume.patch:
-    one more git revert to avoid clutter update
-  * debian/patches/git_monitor_dont_shortcut_powersave_mode.patch: Dropped 
-    included in new version
+mutter (3.10.1-2) experimental; urgency=low
 
- -- Tim Lunn <tim@feathertop.org>  Wed, 18 Sep 2013 15:50:12 +1000
+  * Force build against G3.10 version of gnome-desktop
 
-mutter (3.9.91-0ubuntu1~saucy2) saucy; urgency=medium
+ -- Sjoerd Simons <sjoerd@debian.org>  Sun, 03 Nov 2013 11:19:44 +0100
 
-  * debian/patches/git_monitor_dont_shortcut_powersave_mode.patch
-    Fixes screen blanking only working once.
-
- -- Tim Lunn <tim@feathertop.org>  Tue, 10 Sep 2013 07:16:33 +1000
-
-mutter (3.9.91-0ubuntu1~saucy1) saucy; urgency=medium
+mutter (3.10.1-1) experimental; urgency=low
 
   * New upstream release
-  [Rico Tzschichholz]
-  * debian/patches: revert 8 git patches to avoid dependency on
-    updated cogl/clutter
+  * Sync with Ubuntu (3.10.0-0ubuntu1~saucy1)
+    + Update library name to libmutter0c
+    + Bump build-depends
 
- -- Tim Lunn <tim@feathertop.org>  Wed, 04 Sep 2013 14:57:57 +1000
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 01 Nov 2013 22:34:51 +0100
 
-mutter (3.9.90-0ubuntu1~saucy2) saucy; urgency=medium
+mutter (3.8.4-2) unstable; urgency=low
 
-  * New upstream release
-  * debian/control.in: Bump b-d on gtk, Add b-d on upower-glib and
-    gnome-desktop-3
-  * debian/patches/git_revert_cogl_changes*.patch: revert 3 git patches
-    to avoid dependency on cogl 0.15.6
-  * debian/mutter-common.install: remove /usr/share/mutter
-  * debian/patches/git_fix_xrandr_modes.patch. 
+  * Upload to unstable.
 
- -- Tim Lunn <tim@feathertop.org>  Fri, 23 Aug 2013 21:37:37 +1000
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 13 Oct 2013 17:26:39 +0200
 
-mutter (3.9.5-0ubuntu1~saucy1) saucy; urgency=medium
+mutter (3.8.4-1) experimental; urgency=low
 
-  * New upstream release
+  [ Jeremy Bicha ]
+  * debian/control.in:
+    - Use standard Breaks/Replaces instead of Conflicts against older mutter
+      libraries
 
- -- Tim Lunn <tim@feathertop.org>  Sat, 03 Aug 2013 08:14:03 +1000
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in:
+    + Standards-Version is 3.9.4, no changes needed.
+  * New upstream release.
 
-mutter (3.9.4-0ubuntu1~saucy2) saucy; urgency=medium
+  [ Michael Biebl ]
+  * debian/watch: Track stable releases.
+  * Bump debhelper compatibility level to 9.
 
-  * New upstream release
-  * Bump package naming to libmutter0c
+ -- Michael Biebl <biebl@debian.org>  Fri, 11 Oct 2013 19:37:56 +0200
 
- -- Tim Lunn <tim@feathertop.org>  Mon, 15 Jul 2013 18:29:57 +1000
+mutter (3.8.4-0ubuntu4) trusty; urgency=medium
+
+  * No-change rebuild for new cogl
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Tue, 14 Jan 2014 20:15:33 +0000
+
+mutter (3.8.4-0ubuntu3) trusty; urgency=medium
+
+  * git-ui-add-missing-delimiter.patch,
+    git-prefs-fix-introspection-issues.patch: Add git patch to fix build
+    with current gobject-introspection.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 03 Jan 2014 15:06:05 +0000
+
+mutter (3.8.4-0ubuntu2) saucy; urgency=low
+
+  * debian/patches/git-background-dont-save-pixbuf.patch: Add git patch
+    to avoid leaking background pixbuf's (LP: #1217649) 
+
+ -- Tim Lunn <tim@feathertop.org>  Thu, 29 Aug 2013 13:37:30 +1000
+
+mutter (3.8.4-0ubuntu1) saucy; urgency=low
+
+  * New upstream release.
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 31 Jul 2013 20:13:05 -0400
 
 mutter (3.8.3-1ubuntu2) saucy; urgency=low
 
