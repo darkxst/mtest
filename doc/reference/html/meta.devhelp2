@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Mutter Reference Manual" link="index.html" author="" name="meta" version="2" language="c">
+  <chapters>
+    <sub name="Overview" link="mutter-overview.html"/>
+    <sub name="Running Mutter" link="running-mutter.html"/>
+    <sub name="Mutter Core Reference" link="core-reference.html">
+      <sub name="Main" link="meta-Main.html"/>
+      <sub name="Common" link="meta-Common.html"/>
+      <sub name="Gradients" link="meta-Gradients.html"/>
+      <sub name="Preferences" link="meta-Preferences.html"/>
+      <sub name="Utility functions" link="meta-Utility-functions.html"/>
+      <sub name="Errors" link="meta-Errors.html"/>
+      <sub name="MetaPlugin" link="MetaPlugin.html"/>
+      <sub name="MetaBarrier" link="MetaBarrier.html"/>
+      <sub name="MetaRectangle" link="MetaRectangle.html"/>
+      <sub name="MetaCompositor" link="meta-MetaCompositor.html"/>
+      <sub name="MetaDisplay" link="MetaDisplay.html"/>
+      <sub name="MetaGroup" link="meta-MetaGroup.html"/>
+      <sub name="MetaKeybinding" link="meta-MetaKeybinding.html"/>
+      <sub name="MetaBackgroundActor" link="MetaBackgroundActor.html"/>
+      <sub name="MetaShadowFactory" link="MetaShadowFactory.html"/>
+      <sub name="MetaShapedTexture" link="MetaShapedTexture.html"/>
+      <sub name="MetaWindowActor" link="MetaWindowActor.html"/>
+      <sub name="MetaScreen" link="MetaScreen.html"/>
+      <sub name="MetaWindow" link="MetaWindow.html"/>
+      <sub name="MetaWorkspace" link="MetaWorkspace.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="meta_get_option_context ()" link="meta-Main.html#meta-get-option-context"/>
+    <keyword type="function" name="meta_init ()" link="meta-Main.html#meta-init"/>
+    <keyword type="function" name="meta_run ()" link="meta-Main.html#meta-run"/>
+    <keyword type="function" name="meta_get_replace_current_wm ()" link="meta-Main.html#meta-get-replace-current-wm"/>
+    <keyword type="function" name="meta_set_wm_name ()" link="meta-Main.html#meta-set-wm-name"/>
+    <keyword type="function" name="meta_set_gnome_wm_keybindings ()" link="meta-Main.html#meta-set-gnome-wm-keybindings"/>
+    <keyword type="function" name="meta_exit ()" link="meta-Main.html#meta-exit"/>
+    <keyword type="function" name="meta_quit ()" link="meta-Main.html#meta-quit"/>
+    <keyword type="enum" name="enum MetaExitCode" link="meta-Main.html#MetaExitCode"/>
+    <keyword type="function" name="MetaWindowMenuFunc ()" link="meta-Common.html#MetaWindowMenuFunc"/>
+    <keyword type="function" name="meta_frame_borders_clear ()" link="meta-Common.html#meta-frame-borders-clear"/>
+    <keyword type="macro" name="META_PRIORITY_RESIZE" link="meta-Common.html#META-PRIORITY-RESIZE:CAPS"/>
+    <keyword type="macro" name="META_PRIORITY_BEFORE_REDRAW" link="meta-Common.html#META-PRIORITY-BEFORE-REDRAW:CAPS"/>
+    <keyword type="macro" name="META_PRIORITY_REDRAW" link="meta-Common.html#META-PRIORITY-REDRAW:CAPS"/>
+    <keyword type="macro" name="META_PRIORITY_PREFS_NOTIFY" link="meta-Common.html#META-PRIORITY-PREFS-NOTIFY:CAPS"/>
+    <keyword type="macro" name="POINT_IN_RECT()" link="meta-Common.html#POINT-IN-RECT:CAPS"/>
+    <keyword type="macro" name="META_VIRTUAL_CORE_POINTER_ID" link="meta-Common.html#META-VIRTUAL-CORE-POINTER-ID:CAPS"/>
+    <keyword type="macro" name="META_VIRTUAL_CORE_KEYBOARD_ID" link="meta-Common.html#META-VIRTUAL-CORE-KEYBOARD-ID:CAPS"/>
+    <keyword type="enum" name="enum MetaFrameFlags" link="meta-Common.html#MetaFrameFlags"/>
+    <keyword type="enum" name="enum MetaMenuOp" link="meta-Common.html#MetaMenuOp"/>
+    <keyword type="enum" name="enum MetaGrabOp" link="meta-Common.html#MetaGrabOp"/>
+    <keyword type="enum" name="enum MetaCursor" link="meta-Common.html#MetaCursor"/>
+    <keyword type="enum" name="enum MetaFrameType" link="meta-Common.html#MetaFrameType"/>
+    <keyword type="enum" name="enum MetaVirtualModifier" link="meta-Common.html#MetaVirtualModifier"/>
+    <keyword type="enum" name="enum MetaDirection" link="meta-Common.html#MetaDirection"/>
+    <keyword type="enum" name="enum MetaMotionDirection" link="meta-Common.html#MetaMotionDirection"/>
+    <keyword type="enum" name="enum MetaSide" link="meta-Common.html#MetaSide"/>
+    <keyword type="enum" name="enum MetaButtonFunction" link="meta-Common.html#MetaButtonFunction"/>
+    <keyword type="macro" name="MAX_BUTTONS_PER_CORNER" link="meta-Common.html#MAX-BUTTONS-PER-CORNER:CAPS"/>
+    <keyword type="struct" name="struct MetaButtonLayout" link="meta-Common.html#MetaButtonLayout"/>
+    <keyword type="struct" name="struct MetaFrameBorders" link="meta-Common.html#MetaFrameBorders"/>
+    <keyword type="macro" name="META_ICON_WIDTH" link="meta-Common.html#META-ICON-WIDTH:CAPS"/>
+    <keyword type="macro" name="META_ICON_HEIGHT" link="meta-Common.html#META-ICON-HEIGHT:CAPS"/>
+    <keyword type="macro" name="META_MINI_ICON_WIDTH" link="meta-Common.html#META-MINI-ICON-WIDTH:CAPS"/>
+    <keyword type="macro" name="META_MINI_ICON_HEIGHT" link="meta-Common.html#META-MINI-ICON-HEIGHT:CAPS"/>
+    <keyword type="macro" name="META_DEFAULT_ICON_NAME" link="meta-Common.html#META-DEFAULT-ICON-NAME:CAPS"/>
+    <keyword type="enum" name="enum MetaStackLayer" link="meta-Common.html#MetaStackLayer"/>
+    <keyword type="struct" name="MetaWindowMenu" link="meta-Common.html#MetaWindowMenu"/>
+    <keyword type="struct" name="MetaResizePopup" link="meta-Common.html#MetaResizePopup"/>
+    <keyword type="function" name="meta_gradient_create_simple ()" link="meta-Gradients.html#meta-gradient-create-simple"/>
+    <keyword type="function" name="meta_gradient_create_multi ()" link="meta-Gradients.html#meta-gradient-create-multi"/>
+    <keyword type="function" name="meta_gradient_create_interwoven ()" link="meta-Gradients.html#meta-gradient-create-interwoven"/>
+    <keyword type="function" name="meta_gradient_add_alpha ()" link="meta-Gradients.html#meta-gradient-add-alpha"/>
+    <keyword type="enum" name="enum MetaGradientType" link="meta-Gradients.html#MetaGradientType"/>
+    <keyword type="function" name="MetaPrefsChangedFunc ()" link="meta-Preferences.html#MetaPrefsChangedFunc"/>
+    <keyword type="function" name="meta_prefs_add_listener ()" link="meta-Preferences.html#meta-prefs-add-listener"/>
+    <keyword type="function" name="meta_prefs_remove_listener ()" link="meta-Preferences.html#meta-prefs-remove-listener"/>
+    <keyword type="function" name="meta_prefs_init ()" link="meta-Preferences.html#meta-prefs-init"/>
+    <keyword type="function" name="meta_prefs_override_preference_schema ()" link="meta-Preferences.html#meta-prefs-override-preference-schema"/>
+    <keyword type="function" name="meta_preference_to_string ()" link="meta-Preferences.html#meta-preference-to-string"/>
+    <keyword type="function" name="meta_prefs_get_mouse_button_mods ()" link="meta-Preferences.html#meta-prefs-get-mouse-button-mods"/>
+    <keyword type="function" name="meta_prefs_get_mouse_button_resize ()" link="meta-Preferences.html#meta-prefs-get-mouse-button-resize"/>
+    <keyword type="function" name="meta_prefs_get_mouse_button_menu ()" link="meta-Preferences.html#meta-prefs-get-mouse-button-menu"/>
+    <keyword type="function" name="meta_prefs_get_focus_mode ()" link="meta-Preferences.html#meta-prefs-get-focus-mode"/>
+    <keyword type="function" name="meta_prefs_get_focus_new_windows ()" link="meta-Preferences.html#meta-prefs-get-focus-new-windows"/>
+    <keyword type="function" name="meta_prefs_get_attach_modal_dialogs ()" link="meta-Preferences.html#meta-prefs-get-attach-modal-dialogs"/>
+    <keyword type="function" name="meta_prefs_get_raise_on_click ()" link="meta-Preferences.html#meta-prefs-get-raise-on-click"/>
+    <keyword type="function" name="meta_prefs_get_theme ()" link="meta-Preferences.html#meta-prefs-get-theme"/>
+    <keyword type="function" name="meta_prefs_get_titlebar_font ()" link="meta-Preferences.html#meta-prefs-get-titlebar-font"/>
+    <keyword type="function" name="meta_prefs_get_num_workspaces ()" link="meta-Preferences.html#meta-prefs-get-num-workspaces"/>
+    <keyword type="function" name="meta_prefs_get_dynamic_workspaces ()" link="meta-Preferences.html#meta-prefs-get-dynamic-workspaces"/>
+    <keyword type="function" name="meta_prefs_get_disable_workarounds ()" link="meta-Preferences.html#meta-prefs-get-disable-workarounds"/>
+    <keyword type="function" name="meta_prefs_get_auto_raise ()" link="meta-Preferences.html#meta-prefs-get-auto-raise"/>
+    <keyword type="function" name="meta_prefs_get_auto_raise_delay ()" link="meta-Preferences.html#meta-prefs-get-auto-raise-delay"/>
+    <keyword type="function" name="meta_prefs_get_focus_change_on_pointer_rest ()" link="meta-Preferences.html#meta-prefs-get-focus-change-on-pointer-rest"/>
+    <keyword type="function" name="meta_prefs_get_gnome_accessibility ()" link="meta-Preferences.html#meta-prefs-get-gnome-accessibility"/>
+    <keyword type="function" name="meta_prefs_get_gnome_animations ()" link="meta-Preferences.html#meta-prefs-get-gnome-animations"/>
+    <keyword type="function" name="meta_prefs_get_edge_tiling ()" link="meta-Preferences.html#meta-prefs-get-edge-tiling"/>
+    <keyword type="function" name="meta_prefs_get_auto_maximize ()" link="meta-Preferences.html#meta-prefs-get-auto-maximize"/>
+    <keyword type="function" name="meta_prefs_get_button_layout ()" link="meta-Preferences.html#meta-prefs-get-button-layout"/>
+    <keyword type="function" name="meta_prefs_get_action_double_click_titlebar ()" link="meta-Preferences.html#meta-prefs-get-action-double-click-titlebar"/>
+    <keyword type="function" name="meta_prefs_get_action_middle_click_titlebar ()" link="meta-Preferences.html#meta-prefs-get-action-middle-click-titlebar"/>
+    <keyword type="function" name="meta_prefs_get_action_right_click_titlebar ()" link="meta-Preferences.html#meta-prefs-get-action-right-click-titlebar"/>
+    <keyword type="function" name="meta_prefs_set_num_workspaces ()" link="meta-Preferences.html#meta-prefs-set-num-workspaces"/>
+    <keyword type="function" name="meta_prefs_get_workspace_name ()" link="meta-Preferences.html#meta-prefs-get-workspace-name"/>
+    <keyword type="function" name="meta_prefs_change_workspace_name ()" link="meta-Preferences.html#meta-prefs-change-workspace-name"/>
+    <keyword type="function" name="meta_prefs_get_cursor_theme ()" link="meta-Preferences.html#meta-prefs-get-cursor-theme"/>
+    <keyword type="function" name="meta_prefs_get_cursor_size ()" link="meta-Preferences.html#meta-prefs-get-cursor-size"/>
+    <keyword type="function" name="meta_prefs_get_compositing_manager ()" link="meta-Preferences.html#meta-prefs-get-compositing-manager"/>
+    <keyword type="function" name="meta_prefs_get_force_fullscreen ()" link="meta-Preferences.html#meta-prefs-get-force-fullscreen"/>
+    <keyword type="function" name="meta_prefs_set_force_fullscreen ()" link="meta-Preferences.html#meta-prefs-set-force-fullscreen"/>
+    <keyword type="function" name="meta_prefs_get_workspaces_only_on_primary ()" link="meta-Preferences.html#meta-prefs-get-workspaces-only-on-primary"/>
+    <keyword type="function" name="meta_prefs_get_draggable_border_width ()" link="meta-Preferences.html#meta-prefs-get-draggable-border-width"/>
+    <keyword type="function" name="meta_prefs_get_ignore_request_hide_titlebar ()" link="meta-Preferences.html#meta-prefs-get-ignore-request-hide-titlebar"/>
+    <keyword type="function" name="meta_prefs_set_ignore_request_hide_titlebar ()" link="meta-Preferences.html#meta-prefs-set-ignore-request-hide-titlebar"/>
+    <keyword type="function" name="MetaKeyHandlerFunc ()" link="meta-Preferences.html#MetaKeyHandlerFunc"/>
+    <keyword type="function" name="meta_prefs_get_keybinding_action ()" link="meta-Preferences.html#meta-prefs-get-keybinding-action"/>
+    <keyword type="function" name="meta_prefs_get_window_binding ()" link="meta-Preferences.html#meta-prefs-get-window-binding"/>
+    <keyword type="function" name="meta_prefs_get_visual_bell ()" link="meta-Preferences.html#meta-prefs-get-visual-bell"/>
+    <keyword type="function" name="meta_prefs_bell_is_audible ()" link="meta-Preferences.html#meta-prefs-bell-is-audible"/>
+    <keyword type="function" name="meta_prefs_get_visual_bell_type ()" link="meta-Preferences.html#meta-prefs-get-visual-bell-type"/>
+    <keyword type="enum" name="enum MetaPreference" link="meta-Preferences.html#MetaPreference"/>
+    <keyword type="enum" name="enum MetaKeyBindingAction" link="meta-Preferences.html#MetaKeyBindingAction"/>
+    <keyword type="enum" name="enum MetaKeyBindingFlags" link="meta-Preferences.html#MetaKeyBindingFlags"/>
+    <keyword type="function" name="meta_is_verbose ()" link="meta-Utility-functions.html#meta-is-verbose"/>
+    <keyword type="function" name="meta_set_verbose ()" link="meta-Utility-functions.html#meta-set-verbose"/>
+    <keyword type="function" name="meta_is_debugging ()" link="meta-Utility-functions.html#meta-is-debugging"/>
+    <keyword type="function" name="meta_set_debugging ()" link="meta-Utility-functions.html#meta-set-debugging"/>
+    <keyword type="function" name="meta_is_syncing ()" link="meta-Utility-functions.html#meta-is-syncing"/>
+    <keyword type="function" name="meta_set_syncing ()" link="meta-Utility-functions.html#meta-set-syncing"/>
+    <keyword type="function" name="meta_set_replace_current_wm ()" link="meta-Utility-functions.html#meta-set-replace-current-wm"/>
+    <keyword type="function" name="meta_debug_spew_real ()" link="meta-Utility-functions.html#meta-debug-spew-real"/>
+    <keyword type="function" name="meta_verbose_real ()" link="meta-Utility-functions.html#meta-verbose-real"/>
+    <keyword type="function" name="meta_bug ()" link="meta-Utility-functions.html#meta-bug"/>
+    <keyword type="function" name="meta_warning ()" link="meta-Utility-functions.html#meta-warning"/>
+    <keyword type="function" name="meta_fatal ()" link="meta-Utility-functions.html#meta-fatal"/>
+    <keyword type="function" name="meta_topic_real ()" link="meta-Utility-functions.html#meta-topic-real"/>
+    <keyword type="function" name="meta_add_verbose_topic ()" link="meta-Utility-functions.html#meta-add-verbose-topic"/>
+    <keyword type="function" name="meta_remove_verbose_topic ()" link="meta-Utility-functions.html#meta-remove-verbose-topic"/>
+    <keyword type="function" name="meta_push_no_msg_prefix ()" link="meta-Utility-functions.html#meta-push-no-msg-prefix"/>
+    <keyword type="function" name="meta_pop_no_msg_prefix ()" link="meta-Utility-functions.html#meta-pop-no-msg-prefix"/>
+    <keyword type="function" name="meta_unsigned_long_equal ()" link="meta-Utility-functions.html#meta-unsigned-long-equal"/>
+    <keyword type="function" name="meta_unsigned_long_hash ()" link="meta-Utility-functions.html#meta-unsigned-long-hash"/>
+    <keyword type="function" name="meta_frame_type_to_string ()" link="meta-Utility-functions.html#meta-frame-type-to-string"/>
+    <keyword type="function" name="meta_gravity_to_string ()" link="meta-Utility-functions.html#meta-gravity-to-string"/>
+    <keyword type="function" name="meta_g_utf8_strndup ()" link="meta-Utility-functions.html#meta-g-utf8-strndup"/>
+    <keyword type="function" name="meta_free_gslist_and_elements ()" link="meta-Utility-functions.html#meta-free-gslist-and-elements"/>
+    <keyword type="function" name="meta_show_dialog ()" link="meta-Utility-functions.html#meta-show-dialog"/>
+    <keyword type="function" name="meta_later_add ()" link="meta-Utility-functions.html#meta-later-add"/>
+    <keyword type="function" name="meta_later_remove ()" link="meta-Utility-functions.html#meta-later-remove"/>
+    <keyword type="enum" name="enum MetaDebugTopic" link="meta-Utility-functions.html#MetaDebugTopic"/>
+    <keyword type="macro" name="meta_debug_spew" link="meta-Utility-functions.html#meta-debug-spew"/>
+    <keyword type="macro" name="meta_verbose" link="meta-Utility-functions.html#meta-verbose"/>
+    <keyword type="macro" name="meta_topic" link="meta-Utility-functions.html#meta-topic"/>
+    <keyword type="enum" name="enum MetaLaterType" link="meta-Utility-functions.html#MetaLaterType"/>
+    <keyword type="function" name="meta_error_trap_push ()" link="meta-Errors.html#meta-error-trap-push"/>
+    <keyword type="function" name="meta_error_trap_pop ()" link="meta-Errors.html#meta-error-trap-pop"/>
+    <keyword type="function" name="meta_error_trap_push_with_return ()" link="meta-Errors.html#meta-error-trap-push-with-return"/>
+    <keyword type="function" name="meta_error_trap_pop_with_return ()" link="meta-Errors.html#meta-error-trap-pop-with-return"/>
+    <keyword type="function" name="meta_plugin_running ()" link="MetaPlugin.html#meta-plugin-running"/>
+    <keyword type="function" name="meta_plugin_debug_mode ()" link="MetaPlugin.html#meta-plugin-debug-mode"/>
+    <keyword type="function" name="meta_plugin_get_info ()" link="MetaPlugin.html#meta-plugin-get-info"/>
+    <keyword type="macro" name="META_PLUGIN_DECLARE()" link="MetaPlugin.html#META-PLUGIN-DECLARE:CAPS"/>
+    <keyword type="function" name="meta_plugin_switch_workspace_completed ()" link="MetaPlugin.html#meta-plugin-switch-workspace-completed"/>
+    <keyword type="function" name="meta_plugin_minimize_completed ()" link="MetaPlugin.html#meta-plugin-minimize-completed"/>
+    <keyword type="function" name="meta_plugin_maximize_completed ()" link="MetaPlugin.html#meta-plugin-maximize-completed"/>
+    <keyword type="function" name="meta_plugin_unmaximize_completed ()" link="MetaPlugin.html#meta-plugin-unmaximize-completed"/>
+    <keyword type="function" name="meta_plugin_map_completed ()" link="MetaPlugin.html#meta-plugin-map-completed"/>
+    <keyword type="function" name="meta_plugin_destroy_completed ()" link="MetaPlugin.html#meta-plugin-destroy-completed"/>
+    <keyword type="function" name="meta_plugin_begin_modal ()" link="MetaPlugin.html#meta-plugin-begin-modal"/>
+    <keyword type="function" name="meta_plugin_end_modal ()" link="MetaPlugin.html#meta-plugin-end-modal"/>
+    <keyword type="function" name="meta_plugin_get_screen ()" link="MetaPlugin.html#meta-plugin-get-screen"/>
+    <keyword type="function" name="meta_plugin_manager_set_plugin_type ()" link="MetaPlugin.html#meta-plugin-manager-set-plugin-type"/>
+    <keyword type="struct" name="struct MetaPlugin" link="MetaPlugin.html#MetaPlugin-struct"/>
+    <keyword type="struct" name="struct MetaPluginClass" link="MetaPlugin.html#MetaPluginClass"/>
+    <keyword type="struct" name="struct MetaPluginInfo" link="MetaPlugin.html#MetaPluginInfo"/>
+    <keyword type="struct" name="struct MetaPluginVersion" link="MetaPlugin.html#MetaPluginVersion"/>
+    <keyword type="enum" name="enum MetaModalOptions" link="MetaPlugin.html#MetaModalOptions"/>
+    <keyword type="function" name="meta_barrier_is_active ()" link="MetaBarrier.html#meta-barrier-is-active"/>
+    <keyword type="function" name="meta_barrier_destroy ()" link="MetaBarrier.html#meta-barrier-destroy"/>
+    <keyword type="function" name="meta_barrier_release ()" link="MetaBarrier.html#meta-barrier-release"/>
+    <keyword type="struct" name="struct MetaBarrier" link="MetaBarrier.html#MetaBarrier-struct"/>
+    <keyword type="struct" name="struct MetaBarrierClass" link="MetaBarrier.html#MetaBarrierClass"/>
+    <keyword type="enum" name="enum MetaBarrierDirection" link="MetaBarrier.html#MetaBarrierDirection"/>
+    <keyword type="struct" name="struct MetaBarrierEvent" link="MetaBarrier.html#MetaBarrierEvent-struct"/>
+    <keyword type="property" name="The “directions” property" link="MetaBarrier.html#MetaBarrier--directions"/>
+    <keyword type="property" name="The “display” property" link="MetaBarrier.html#MetaBarrier--display"/>
+    <keyword type="property" name="The “x1” property" link="MetaBarrier.html#MetaBarrier--x1"/>
+    <keyword type="property" name="The “x2” property" link="MetaBarrier.html#MetaBarrier--x2"/>
+    <keyword type="property" name="The “y1” property" link="MetaBarrier.html#MetaBarrier--y1"/>
+    <keyword type="property" name="The “y2” property" link="MetaBarrier.html#MetaBarrier--y2"/>
+    <keyword type="signal" name="The “hit” signal" link="MetaBarrier.html#MetaBarrier-hit"/>
+    <keyword type="signal" name="The “left” signal" link="MetaBarrier.html#MetaBarrier-left"/>
+    <keyword type="function" name="meta_rectangle_copy ()" link="MetaRectangle.html#meta-rectangle-copy"/>
+    <keyword type="function" name="meta_rectangle_free ()" link="MetaRectangle.html#meta-rectangle-free"/>
+    <keyword type="function" name="meta_rect ()" link="MetaRectangle.html#meta-rect"/>
+    <keyword type="function" name="meta_rectangle_area ()" link="MetaRectangle.html#meta-rectangle-area"/>
+    <keyword type="function" name="meta_rectangle_intersect ()" link="MetaRectangle.html#meta-rectangle-intersect"/>
+    <keyword type="function" name="meta_rectangle_equal ()" link="MetaRectangle.html#meta-rectangle-equal"/>
+    <keyword type="function" name="meta_rectangle_union ()" link="MetaRectangle.html#meta-rectangle-union"/>
+    <keyword type="function" name="meta_rectangle_overlap ()" link="MetaRectangle.html#meta-rectangle-overlap"/>
+    <keyword type="function" name="meta_rectangle_vert_overlap ()" link="MetaRectangle.html#meta-rectangle-vert-overlap"/>
+    <keyword type="function" name="meta_rectangle_horiz_overlap ()" link="MetaRectangle.html#meta-rectangle-horiz-overlap"/>
+    <keyword type="function" name="meta_rectangle_could_fit_rect ()" link="MetaRectangle.html#meta-rectangle-could-fit-rect"/>
+    <keyword type="function" name="meta_rectangle_contains_rect ()" link="MetaRectangle.html#meta-rectangle-contains-rect"/>
+    <keyword type="struct" name="struct MetaRectangle" link="MetaRectangle.html#MetaRectangle-struct"/>
+    <keyword type="struct" name="struct MetaStrut" link="MetaRectangle.html#MetaStrut"/>
+    <keyword type="enum" name="enum MetaEdgeType" link="MetaRectangle.html#MetaEdgeType"/>
+    <keyword type="struct" name="struct MetaEdge" link="MetaRectangle.html#MetaEdge"/>
+    <keyword type="" name="Containers" link="meta-MetaCompositor.html#id-1.4.11.5.9"/>
+    <keyword type="function" name="meta_compositor_new ()" link="meta-MetaCompositor.html#meta-compositor-new"/>
+    <keyword type="function" name="meta_compositor_destroy ()" link="meta-MetaCompositor.html#meta-compositor-destroy"/>
+    <keyword type="function" name="meta_compositor_manage_screen ()" link="meta-MetaCompositor.html#meta-compositor-manage-screen"/>
+    <keyword type="function" name="meta_compositor_unmanage_screen ()" link="meta-MetaCompositor.html#meta-compositor-unmanage-screen"/>
+    <keyword type="function" name="meta_compositor_window_shape_changed ()" link="meta-MetaCompositor.html#meta-compositor-window-shape-changed"/>
+    <keyword type="function" name="meta_compositor_process_event ()" link="meta-MetaCompositor.html#meta-compositor-process-event"/>
+    <keyword type="function" name="meta_compositor_filter_keybinding ()" link="meta-MetaCompositor.html#meta-compositor-filter-keybinding"/>
+    <keyword type="function" name="meta_compositor_add_window ()" link="meta-MetaCompositor.html#meta-compositor-add-window"/>
+    <keyword type="function" name="meta_compositor_remove_window ()" link="meta-MetaCompositor.html#meta-compositor-remove-window"/>
+    <keyword type="function" name="meta_compositor_show_window ()" link="meta-MetaCompositor.html#meta-compositor-show-window"/>
+    <keyword type="function" name="meta_compositor_hide_window ()" link="meta-MetaCompositor.html#meta-compositor-hide-window"/>
+    <keyword type="function" name="meta_compositor_switch_workspace ()" link="meta-MetaCompositor.html#meta-compositor-switch-workspace"/>
+    <keyword type="function" name="meta_compositor_maximize_window ()" link="meta-MetaCompositor.html#meta-compositor-maximize-window"/>
+    <keyword type="function" name="meta_compositor_unmaximize_window ()" link="meta-MetaCompositor.html#meta-compositor-unmaximize-window"/>
+    <keyword type="function" name="meta_compositor_sync_window_geometry ()" link="meta-MetaCompositor.html#meta-compositor-sync-window-geometry"/>
+    <keyword type="function" name="meta_compositor_set_updates_frozen ()" link="meta-MetaCompositor.html#meta-compositor-set-updates-frozen"/>
+    <keyword type="function" name="meta_compositor_queue_frame_drawn ()" link="meta-MetaCompositor.html#meta-compositor-queue-frame-drawn"/>
+    <keyword type="function" name="meta_compositor_sync_stack ()" link="meta-MetaCompositor.html#meta-compositor-sync-stack"/>
+    <keyword type="function" name="meta_compositor_sync_screen_size ()" link="meta-MetaCompositor.html#meta-compositor-sync-screen-size"/>
+    <keyword type="function" name="meta_compositor_flash_screen ()" link="meta-MetaCompositor.html#meta-compositor-flash-screen"/>
+    <keyword type="function" name="meta_get_stage_for_screen ()" link="meta-MetaCompositor.html#meta-get-stage-for-screen"/>
+    <keyword type="function" name="meta_get_overlay_window ()" link="meta-MetaCompositor.html#meta-get-overlay-window"/>
+    <keyword type="function" name="meta_get_window_actors ()" link="meta-MetaCompositor.html#meta-get-window-actors"/>
+    <keyword type="function" name="meta_get_window_group_for_screen ()" link="meta-MetaCompositor.html#meta-get-window-group-for-screen"/>
+    <keyword type="function" name="meta_get_top_window_group_for_screen ()" link="meta-MetaCompositor.html#meta-get-top-window-group-for-screen"/>
+    <keyword type="function" name="meta_disable_unredirect_for_screen ()" link="meta-MetaCompositor.html#meta-disable-unredirect-for-screen"/>
+    <keyword type="function" name="meta_enable_unredirect_for_screen ()" link="meta-MetaCompositor.html#meta-enable-unredirect-for-screen"/>
+    <keyword type="function" name="meta_set_stage_input_region ()" link="meta-MetaCompositor.html#meta-set-stage-input-region"/>
+    <keyword type="function" name="meta_empty_stage_input_region ()" link="meta-MetaCompositor.html#meta-empty-stage-input-region"/>
+    <keyword type="enum" name="enum MetaCompEffect" link="meta-MetaCompositor.html#MetaCompEffect"/>
+    <keyword type="struct" name="MetaCompositor" link="meta-MetaCompositor.html#MetaCompositor"/>
+    <keyword type="macro" name="meta_XFree()" link="MetaDisplay.html#meta-XFree"/>
+    <keyword type="function" name="meta_display_get_compositor_version ()" link="MetaDisplay.html#meta-display-get-compositor-version"/>
+    <keyword type="function" name="meta_display_get_xinput_opcode ()" link="MetaDisplay.html#meta-display-get-xinput-opcode"/>
+    <keyword type="function" name="meta_display_supports_extended_barriers ()" link="MetaDisplay.html#meta-display-supports-extended-barriers"/>
+    <keyword type="function" name="meta_display_get_xdisplay ()" link="MetaDisplay.html#meta-display-get-xdisplay"/>
+    <keyword type="function" name="meta_display_get_compositor ()" link="MetaDisplay.html#meta-display-get-compositor"/>
+    <keyword type="function" name="meta_display_get_screens ()" link="MetaDisplay.html#meta-display-get-screens"/>
+    <keyword type="function" name="meta_display_has_shape ()" link="MetaDisplay.html#meta-display-has-shape"/>
+    <keyword type="function" name="meta_display_screen_for_root ()" link="MetaDisplay.html#meta-display-screen-for-root"/>
+    <keyword type="function" name="meta_display_get_focus_window ()" link="MetaDisplay.html#meta-display-get-focus-window"/>
+    <keyword type="function" name="meta_display_xwindow_is_a_no_focus_window ()" link="MetaDisplay.html#meta-display-xwindow-is-a-no-focus-window"/>
+    <keyword type="function" name="meta_display_get_damage_event_base ()" link="MetaDisplay.html#meta-display-get-damage-event-base"/>
+    <keyword type="function" name="meta_display_get_shape_event_base ()" link="MetaDisplay.html#meta-display-get-shape-event-base"/>
+    <keyword type="function" name="meta_display_xserver_time_is_before ()" link="MetaDisplay.html#meta-display-xserver-time-is-before"/>
+    <keyword type="function" name="meta_display_get_last_user_time ()" link="MetaDisplay.html#meta-display-get-last-user-time"/>
+    <keyword type="function" name="meta_display_get_current_time ()" link="MetaDisplay.html#meta-display-get-current-time"/>
+    <keyword type="function" name="meta_display_get_current_time_roundtrip ()" link="MetaDisplay.html#meta-display-get-current-time-roundtrip"/>
+    <keyword type="function" name="meta_display_get_ignored_modifier_mask ()" link="MetaDisplay.html#meta-display-get-ignored-modifier-mask"/>
+    <keyword type="function" name="meta_display_get_tab_list ()" link="MetaDisplay.html#meta-display-get-tab-list"/>
+    <keyword type="function" name="meta_display_get_tab_next ()" link="MetaDisplay.html#meta-display-get-tab-next"/>
+    <keyword type="function" name="meta_display_get_tab_current ()" link="MetaDisplay.html#meta-display-get-tab-current"/>
+    <keyword type="function" name="meta_display_begin_grab_op ()" link="MetaDisplay.html#meta-display-begin-grab-op"/>
+    <keyword type="function" name="meta_display_end_grab_op ()" link="MetaDisplay.html#meta-display-end-grab-op"/>
+    <keyword type="function" name="meta_display_get_grab_op ()" link="MetaDisplay.html#meta-display-get-grab-op"/>
+    <keyword type="function" name="meta_display_add_keybinding ()" link="MetaDisplay.html#meta-display-add-keybinding"/>
+    <keyword type="function" name="meta_display_remove_keybinding ()" link="MetaDisplay.html#meta-display-remove-keybinding"/>
+    <keyword type="function" name="meta_display_get_keybinding_action ()" link="MetaDisplay.html#meta-display-get-keybinding-action"/>
+    <keyword type="function" name="meta_display_set_input_focus_window ()" link="MetaDisplay.html#meta-display-set-input-focus-window"/>
+    <keyword type="function" name="meta_display_focus_the_no_focus_window ()" link="MetaDisplay.html#meta-display-focus-the-no-focus-window"/>
+    <keyword type="function" name="meta_display_sort_windows_by_stacking ()" link="MetaDisplay.html#meta-display-sort-windows-by-stacking"/>
+    <keyword type="function" name="meta_display_get_leader_window ()" link="MetaDisplay.html#meta-display-get-leader-window"/>
+    <keyword type="function" name="meta_display_add_ignored_crossing_serial ()" link="MetaDisplay.html#meta-display-add-ignored-crossing-serial"/>
+    <keyword type="function" name="meta_display_unmanage_screen ()" link="MetaDisplay.html#meta-display-unmanage-screen"/>
+    <keyword type="function" name="meta_display_clear_mouse_mode ()" link="MetaDisplay.html#meta-display-clear-mouse-mode"/>
+    <keyword type="enum" name="enum MetaTabList" link="MetaDisplay.html#MetaTabList"/>
+    <keyword type="enum" name="enum MetaTabShowType" link="MetaDisplay.html#MetaTabShowType"/>
+    <keyword type="struct" name="MetaDisplay" link="MetaDisplay.html#MetaDisplay-struct"/>
+    <keyword type="struct" name="MetaDisplayClass" link="MetaDisplay.html#MetaDisplayClass"/>
+    <keyword type="property" name="The “focus-window” property" link="MetaDisplay.html#MetaDisplay--focus-window"/>
+    <keyword type="signal" name="The “accelerator-activated” signal" link="MetaDisplay.html#MetaDisplay-accelerator-activated"/>
+    <keyword type="signal" name="The “grab-op-begin” signal" link="MetaDisplay.html#MetaDisplay-grab-op-begin"/>
+    <keyword type="signal" name="The “grab-op-end” signal" link="MetaDisplay.html#MetaDisplay-grab-op-end"/>
+    <keyword type="signal" name="The “modifiers-accelerator-activated” signal" link="MetaDisplay.html#MetaDisplay-modifiers-accelerator-activated"/>
+    <keyword type="signal" name="The “overlay-key” signal" link="MetaDisplay.html#MetaDisplay-overlay-key"/>
+    <keyword type="signal" name="The “window-created” signal" link="MetaDisplay.html#MetaDisplay-window-created"/>
+    <keyword type="signal" name="The “window-demands-attention” signal" link="MetaDisplay.html#MetaDisplay-window-demands-attention"/>
+    <keyword type="signal" name="The “window-marked-urgent” signal" link="MetaDisplay.html#MetaDisplay-window-marked-urgent"/>
+    <keyword type="function" name="meta_window_get_group ()" link="meta-MetaGroup.html#meta-window-get-group"/>
+    <keyword type="function" name="meta_window_compute_group ()" link="meta-MetaGroup.html#meta-window-compute-group"/>
+    <keyword type="function" name="meta_window_shutdown_group ()" link="meta-MetaGroup.html#meta-window-shutdown-group"/>
+    <keyword type="function" name="meta_window_group_leader_changed ()" link="meta-MetaGroup.html#meta-window-group-leader-changed"/>
+    <keyword type="function" name="meta_display_lookup_group ()" link="meta-MetaGroup.html#meta-display-lookup-group"/>
+    <keyword type="function" name="meta_group_list_windows ()" link="meta-MetaGroup.html#meta-group-list-windows"/>
+    <keyword type="function" name="meta_group_update_layers ()" link="meta-MetaGroup.html#meta-group-update-layers"/>
+    <keyword type="function" name="meta_group_get_startup_id ()" link="meta-MetaGroup.html#meta-group-get-startup-id"/>
+    <keyword type="function" name="meta_group_get_size ()" link="meta-MetaGroup.html#meta-group-get-size"/>
+    <keyword type="function" name="meta_group_property_notify ()" link="meta-MetaGroup.html#meta-group-property-notify"/>
+    <keyword type="struct" name="MetaGroup" link="meta-MetaGroup.html#MetaGroup"/>
+    <keyword type="macro" name="META_TYPE_KEY_BINDING" link="meta-MetaKeybinding.html#META-TYPE-KEY-BINDING:CAPS"/>
+    <keyword type="function" name="meta_key_binding_get_name ()" link="meta-MetaKeybinding.html#meta-key-binding-get-name"/>
+    <keyword type="function" name="meta_key_binding_get_modifiers ()" link="meta-MetaKeybinding.html#meta-key-binding-get-modifiers"/>
+    <keyword type="function" name="meta_key_binding_get_mask ()" link="meta-MetaKeybinding.html#meta-key-binding-get-mask"/>
+    <keyword type="function" name="meta_key_binding_is_builtin ()" link="meta-MetaKeybinding.html#meta-key-binding-is-builtin"/>
+    <keyword type="function" name="meta_keybindings_set_custom_handler ()" link="meta-MetaKeybinding.html#meta-keybindings-set-custom-handler"/>
+    <keyword type="function" name="meta_screen_ungrab_all_keys ()" link="meta-MetaKeybinding.html#meta-screen-ungrab-all-keys"/>
+    <keyword type="function" name="meta_screen_grab_all_keys ()" link="meta-MetaKeybinding.html#meta-screen-grab-all-keys"/>
+    <keyword type="struct" name="MetaKeyBinding" link="meta-MetaKeybinding.html#MetaKeyBinding-struct"/>
+    <keyword type="struct" name="struct MetaBackgroundActor" link="MetaBackgroundActor.html#MetaBackgroundActor-struct"/>
+    <keyword type="struct" name="struct MetaBackgroundActorClass" link="MetaBackgroundActor.html#MetaBackgroundActorClass"/>
+    <keyword type="function" name="meta_shadow_factory_get_default ()" link="MetaShadowFactory.html#meta-shadow-factory-get-default"/>
+    <keyword type="function" name="meta_shadow_factory_set_params ()" link="MetaShadowFactory.html#meta-shadow-factory-set-params"/>
+    <keyword type="function" name="meta_shadow_factory_get_params ()" link="MetaShadowFactory.html#meta-shadow-factory-get-params"/>
+    <keyword type="struct" name="struct MetaShadowParams" link="MetaShadowFactory.html#MetaShadowParams"/>
+    <keyword type="struct" name="MetaShadowFactory" link="MetaShadowFactory.html#MetaShadowFactory-struct"/>
+    <keyword type="struct" name="MetaShadowFactoryClass" link="MetaShadowFactory.html#MetaShadowFactoryClass"/>
+    <keyword type="signal" name="The “changed” signal" link="MetaShadowFactory.html#MetaShadowFactory-changed"/>
+    <keyword type="function" name="meta_shaped_texture_new ()" link="MetaShapedTexture.html#meta-shaped-texture-new"/>
+    <keyword type="function" name="meta_shaped_texture_set_create_mipmaps ()" link="MetaShapedTexture.html#meta-shaped-texture-set-create-mipmaps"/>
+    <keyword type="function" name="meta_shaped_texture_update_area ()" link="MetaShapedTexture.html#meta-shaped-texture-update-area"/>
+    <keyword type="function" name="meta_shaped_texture_get_texture ()" link="MetaShapedTexture.html#meta-shaped-texture-get-texture"/>
+    <keyword type="function" name="meta_shaped_texture_set_mask_texture ()" link="MetaShapedTexture.html#meta-shaped-texture-set-mask-texture"/>
+    <keyword type="function" name="meta_shaped_texture_get_image ()" link="MetaShapedTexture.html#meta-shaped-texture-get-image"/>
+    <keyword type="struct" name="struct MetaShapedTexture" link="MetaShapedTexture.html#MetaShapedTexture-struct"/>
+    <keyword type="struct" name="struct MetaShapedTextureClass" link="MetaShapedTexture.html#MetaShapedTextureClass"/>
+    <keyword type="function" name="meta_window_actor_get_x_window ()" link="MetaWindowActor.html#meta-window-actor-get-x-window"/>
+    <keyword type="function" name="meta_window_actor_get_meta_window ()" link="MetaWindowActor.html#meta-window-actor-get-meta-window"/>
+    <keyword type="function" name="meta_window_actor_get_texture ()" link="MetaWindowActor.html#meta-window-actor-get-texture"/>
+    <keyword type="function" name="meta_window_actor_is_destroyed ()" link="MetaWindowActor.html#meta-window-actor-is-destroyed"/>
+    <keyword type="struct" name="struct MetaWindowActor" link="MetaWindowActor.html#MetaWindowActor-struct"/>
+    <keyword type="struct" name="struct MetaWindowActorClass" link="MetaWindowActor.html#MetaWindowActorClass"/>
+    <keyword type="property" name="The “meta-window” property" link="MetaWindowActor.html#MetaWindowActor--meta-window"/>
+    <keyword type="property" name="The “no-shadow” property" link="MetaWindowActor.html#MetaWindowActor--no-shadow"/>
+    <keyword type="property" name="The “shadow-class” property" link="MetaWindowActor.html#MetaWindowActor--shadow-class"/>
+    <keyword type="function" name="meta_screen_get_screen_number ()" link="MetaScreen.html#meta-screen-get-screen-number"/>
+    <keyword type="function" name="meta_screen_get_display ()" link="MetaScreen.html#meta-screen-get-display"/>
+    <keyword type="function" name="meta_screen_get_xroot ()" link="MetaScreen.html#meta-screen-get-xroot"/>
+    <keyword type="function" name="meta_screen_get_size ()" link="MetaScreen.html#meta-screen-get-size"/>
+    <keyword type="function" name="meta_screen_get_compositor_data ()" link="MetaScreen.html#meta-screen-get-compositor-data"/>
+    <keyword type="function" name="meta_screen_set_compositor_data ()" link="MetaScreen.html#meta-screen-set-compositor-data"/>
+    <keyword type="function" name="meta_screen_for_x_screen ()" link="MetaScreen.html#meta-screen-for-x-screen"/>
+    <keyword type="function" name="meta_screen_set_cm_selection ()" link="MetaScreen.html#meta-screen-set-cm-selection"/>
+    <keyword type="function" name="meta_screen_unset_cm_selection ()" link="MetaScreen.html#meta-screen-unset-cm-selection"/>
+    <keyword type="function" name="meta_screen_get_startup_sequences ()" link="MetaScreen.html#meta-screen-get-startup-sequences"/>
+    <keyword type="function" name="meta_screen_get_workspaces ()" link="MetaScreen.html#meta-screen-get-workspaces"/>
+    <keyword type="function" name="meta_screen_get_n_workspaces ()" link="MetaScreen.html#meta-screen-get-n-workspaces"/>
+    <keyword type="function" name="meta_screen_get_workspace_by_index ()" link="MetaScreen.html#meta-screen-get-workspace-by-index"/>
+    <keyword type="function" name="meta_screen_remove_workspace ()" link="MetaScreen.html#meta-screen-remove-workspace"/>
+    <keyword type="function" name="meta_screen_append_new_workspace ()" link="MetaScreen.html#meta-screen-append-new-workspace"/>
+    <keyword type="function" name="meta_screen_get_active_workspace_index ()" link="MetaScreen.html#meta-screen-get-active-workspace-index"/>
+    <keyword type="function" name="meta_screen_get_active_workspace ()" link="MetaScreen.html#meta-screen-get-active-workspace"/>
+    <keyword type="function" name="meta_screen_get_n_monitors ()" link="MetaScreen.html#meta-screen-get-n-monitors"/>
+    <keyword type="function" name="meta_screen_get_primary_monitor ()" link="MetaScreen.html#meta-screen-get-primary-monitor"/>
+    <keyword type="function" name="meta_screen_get_current_monitor ()" link="MetaScreen.html#meta-screen-get-current-monitor"/>
+    <keyword type="function" name="meta_screen_get_monitor_geometry ()" link="MetaScreen.html#meta-screen-get-monitor-geometry"/>
+    <keyword type="function" name="meta_screen_get_monitor_index_for_rect ()" link="MetaScreen.html#meta-screen-get-monitor-index-for-rect"/>
+    <keyword type="function" name="meta_screen_focus_default_window ()" link="MetaScreen.html#meta-screen-focus-default-window"/>
+    <keyword type="function" name="meta_screen_override_workspace_layout ()" link="MetaScreen.html#meta-screen-override-workspace-layout"/>
+    <keyword type="struct" name="MetaScreen" link="MetaScreen.html#MetaScreen-struct"/>
+    <keyword type="struct" name="MetaScreenClass" link="MetaScreen.html#MetaScreenClass"/>
+    <keyword type="enum" name="enum MetaScreenCorner" link="MetaScreen.html#MetaScreenCorner"/>
+    <keyword type="property" name="The “n-workspaces” property" link="MetaScreen.html#MetaScreen--n-workspaces"/>
+    <keyword type="signal" name="The “in-fullscreen-changed” signal" link="MetaScreen.html#MetaScreen-in-fullscreen-changed"/>
+    <keyword type="signal" name="The “monitors-changed” signal" link="MetaScreen.html#MetaScreen-monitors-changed"/>
+    <keyword type="signal" name="The “restacked” signal" link="MetaScreen.html#MetaScreen-restacked"/>
+    <keyword type="signal" name="The “startup-sequence-changed” signal" link="MetaScreen.html#MetaScreen-startup-sequence-changed"/>
+    <keyword type="signal" name="The “window-entered-monitor” signal" link="MetaScreen.html#MetaScreen-window-entered-monitor"/>
+    <keyword type="signal" name="The “window-left-monitor” signal" link="MetaScreen.html#MetaScreen-window-left-monitor"/>
+    <keyword type="signal" name="The “workareas-changed” signal" link="MetaScreen.html#MetaScreen-workareas-changed"/>
+    <keyword type="signal" name="The “workspace-added” signal" link="MetaScreen.html#MetaScreen-workspace-added"/>
+    <keyword type="signal" name="The “workspace-removed” signal" link="MetaScreen.html#MetaScreen-workspace-removed"/>
+    <keyword type="signal" name="The “workspace-switched” signal" link="MetaScreen.html#MetaScreen-workspace-switched"/>
+    <keyword type="function" name="meta_window_get_frame ()" link="MetaWindow.html#meta-window-get-frame"/>
+    <keyword type="function" name="meta_window_has_focus ()" link="MetaWindow.html#meta-window-has-focus"/>
+    <keyword type="function" name="meta_window_appears_focused ()" link="MetaWindow.html#meta-window-appears-focused"/>
+    <keyword type="function" name="meta_window_is_shaded ()" link="MetaWindow.html#meta-window-is-shaded"/>
+    <keyword type="function" name="meta_window_is_monitor_sized ()" link="MetaWindow.html#meta-window-is-monitor-sized"/>
+    <keyword type="function" name="meta_window_is_override_redirect ()" link="MetaWindow.html#meta-window-is-override-redirect"/>
+    <keyword type="function" name="meta_window_is_skip_taskbar ()" link="MetaWindow.html#meta-window-is-skip-taskbar"/>
+    <keyword type="function" name="meta_window_get_rect ()" link="MetaWindow.html#meta-window-get-rect"/>
+    <keyword type="function" name="meta_window_get_input_rect ()" link="MetaWindow.html#meta-window-get-input-rect"/>
+    <keyword type="function" name="meta_window_get_frame_rect ()" link="MetaWindow.html#meta-window-get-frame-rect"/>
+    <keyword type="function" name="meta_window_get_outer_rect ()" link="MetaWindow.html#meta-window-get-outer-rect" deprecated="3.12: Use meta_window_get_frame_rect() instead."/>
+    <keyword type="function" name="meta_window_client_rect_to_frame_rect ()" link="MetaWindow.html#meta-window-client-rect-to-frame-rect"/>
+    <keyword type="function" name="meta_window_frame_rect_to_client_rect ()" link="MetaWindow.html#meta-window-frame-rect-to-client-rect"/>
+    <keyword type="function" name="meta_window_get_screen ()" link="MetaWindow.html#meta-window-get-screen"/>
+    <keyword type="function" name="meta_window_get_display ()" link="MetaWindow.html#meta-window-get-display"/>
+    <keyword type="function" name="meta_window_get_xwindow ()" link="MetaWindow.html#meta-window-get-xwindow"/>
+    <keyword type="function" name="meta_window_get_window_type ()" link="MetaWindow.html#meta-window-get-window-type"/>
+    <keyword type="function" name="meta_window_get_window_type_atom ()" link="MetaWindow.html#meta-window-get-window-type-atom"/>
+    <keyword type="function" name="meta_window_get_workspace ()" link="MetaWindow.html#meta-window-get-workspace"/>
+    <keyword type="function" name="meta_window_get_monitor ()" link="MetaWindow.html#meta-window-get-monitor"/>
+    <keyword type="function" name="meta_window_is_on_all_workspaces ()" link="MetaWindow.html#meta-window-is-on-all-workspaces"/>
+    <keyword type="function" name="meta_window_located_on_workspace ()" link="MetaWindow.html#meta-window-located-on-workspace"/>
+    <keyword type="function" name="meta_window_is_hidden ()" link="MetaWindow.html#meta-window-is-hidden"/>
+    <keyword type="function" name="meta_window_activate ()" link="MetaWindow.html#meta-window-activate"/>
+    <keyword type="function" name="meta_window_activate_with_workspace ()" link="MetaWindow.html#meta-window-activate-with-workspace"/>
+    <keyword type="function" name="meta_window_get_description ()" link="MetaWindow.html#meta-window-get-description"/>
+    <keyword type="function" name="meta_window_get_wm_class ()" link="MetaWindow.html#meta-window-get-wm-class"/>
+    <keyword type="function" name="meta_window_get_wm_class_instance ()" link="MetaWindow.html#meta-window-get-wm-class-instance"/>
+    <keyword type="function" name="meta_window_showing_on_its_workspace ()" link="MetaWindow.html#meta-window-showing-on-its-workspace"/>
+    <keyword type="function" name="meta_window_get_gtk_application_id ()" link="MetaWindow.html#meta-window-get-gtk-application-id"/>
+    <keyword type="function" name="meta_window_get_gtk_unique_bus_name ()" link="MetaWindow.html#meta-window-get-gtk-unique-bus-name"/>
+    <keyword type="function" name="meta_window_get_gtk_application_object_path ()" link="MetaWindow.html#meta-window-get-gtk-application-object-path"/>
+    <keyword type="function" name="meta_window_get_gtk_window_object_path ()" link="MetaWindow.html#meta-window-get-gtk-window-object-path"/>
+    <keyword type="function" name="meta_window_get_gtk_app_menu_object_path ()" link="MetaWindow.html#meta-window-get-gtk-app-menu-object-path"/>
+    <keyword type="function" name="meta_window_get_gtk_menubar_object_path ()" link="MetaWindow.html#meta-window-get-gtk-menubar-object-path"/>
+    <keyword type="function" name="meta_window_move ()" link="MetaWindow.html#meta-window-move"/>
+    <keyword type="function" name="meta_window_move_frame ()" link="MetaWindow.html#meta-window-move-frame"/>
+    <keyword type="function" name="meta_window_move_resize_frame ()" link="MetaWindow.html#meta-window-move-resize-frame"/>
+    <keyword type="function" name="meta_window_move_to_monitor ()" link="MetaWindow.html#meta-window-move-to-monitor"/>
+    <keyword type="function" name="meta_window_resize ()" link="MetaWindow.html#meta-window-resize"/>
+    <keyword type="function" name="meta_window_set_demands_attention ()" link="MetaWindow.html#meta-window-set-demands-attention"/>
+    <keyword type="function" name="meta_window_unset_demands_attention ()" link="MetaWindow.html#meta-window-unset-demands-attention"/>
+    <keyword type="function" name="meta_window_get_startup_id ()" link="MetaWindow.html#meta-window-get-startup-id"/>
+    <keyword type="function" name="meta_window_change_workspace_by_index ()" link="MetaWindow.html#meta-window-change-workspace-by-index"/>
+    <keyword type="function" name="meta_window_change_workspace ()" link="MetaWindow.html#meta-window-change-workspace"/>
+    <keyword type="function" name="meta_window_get_compositor_private ()" link="MetaWindow.html#meta-window-get-compositor-private"/>
+    <keyword type="function" name="meta_window_set_compositor_private ()" link="MetaWindow.html#meta-window-set-compositor-private"/>
+    <keyword type="function" name="meta_window_configure_notify ()" link="MetaWindow.html#meta-window-configure-notify"/>
+    <keyword type="function" name="meta_window_get_role ()" link="MetaWindow.html#meta-window-get-role"/>
+    <keyword type="function" name="meta_window_get_layer ()" link="MetaWindow.html#meta-window-get-layer"/>
+    <keyword type="function" name="meta_window_find_root_ancestor ()" link="MetaWindow.html#meta-window-find-root-ancestor"/>
+    <keyword type="function" name="meta_window_is_ancestor_of_transient ()" link="MetaWindow.html#meta-window-is-ancestor-of-transient"/>
+    <keyword type="function" name="MetaWindowForeachFunc ()" link="MetaWindow.html#MetaWindowForeachFunc"/>
+    <keyword type="function" name="meta_window_foreach_transient ()" link="MetaWindow.html#meta-window-foreach-transient"/>
+    <keyword type="function" name="meta_window_foreach_ancestor ()" link="MetaWindow.html#meta-window-foreach-ancestor"/>
+    <keyword type="function" name="meta_window_get_maximized ()" link="MetaWindow.html#meta-window-get-maximized"/>
+    <keyword type="function" name="meta_window_is_fullscreen ()" link="MetaWindow.html#meta-window-is-fullscreen"/>
+    <keyword type="function" name="meta_window_is_on_primary_monitor ()" link="MetaWindow.html#meta-window-is-on-primary-monitor"/>
+    <keyword type="function" name="meta_window_requested_bypass_compositor ()" link="MetaWindow.html#meta-window-requested-bypass-compositor"/>
+    <keyword type="function" name="meta_window_requested_dont_bypass_compositor ()" link="MetaWindow.html#meta-window-requested-dont-bypass-compositor"/>
+    <keyword type="function" name="meta_window_get_icon_geometry ()" link="MetaWindow.html#meta-window-get-icon-geometry"/>
+    <keyword type="function" name="meta_window_set_icon_geometry ()" link="MetaWindow.html#meta-window-set-icon-geometry"/>
+    <keyword type="function" name="meta_window_maximize ()" link="MetaWindow.html#meta-window-maximize"/>
+    <keyword type="function" name="meta_window_unmaximize ()" link="MetaWindow.html#meta-window-unmaximize"/>
+    <keyword type="function" name="meta_window_minimize ()" link="MetaWindow.html#meta-window-minimize"/>
+    <keyword type="function" name="meta_window_unminimize ()" link="MetaWindow.html#meta-window-unminimize"/>
+    <keyword type="function" name="meta_window_raise ()" link="MetaWindow.html#meta-window-raise"/>
+    <keyword type="function" name="meta_window_lower ()" link="MetaWindow.html#meta-window-lower"/>
+    <keyword type="function" name="meta_window_get_title ()" link="MetaWindow.html#meta-window-get-title"/>
+    <keyword type="function" name="meta_window_get_transient_for ()" link="MetaWindow.html#meta-window-get-transient-for"/>
+    <keyword type="function" name="meta_window_get_transient_for_as_xid ()" link="MetaWindow.html#meta-window-get-transient-for-as-xid"/>
+    <keyword type="function" name="meta_window_delete ()" link="MetaWindow.html#meta-window-delete"/>
+    <keyword type="function" name="meta_window_get_stable_sequence ()" link="MetaWindow.html#meta-window-get-stable-sequence"/>
+    <keyword type="function" name="meta_window_get_user_time ()" link="MetaWindow.html#meta-window-get-user-time"/>
+    <keyword type="function" name="meta_window_get_pid ()" link="MetaWindow.html#meta-window-get-pid"/>
+    <keyword type="function" name="meta_window_get_client_machine ()" link="MetaWindow.html#meta-window-get-client-machine"/>
+    <keyword type="function" name="meta_window_is_remote ()" link="MetaWindow.html#meta-window-is-remote"/>
+    <keyword type="function" name="meta_window_is_modal ()" link="MetaWindow.html#meta-window-is-modal"/>
+    <keyword type="function" name="meta_window_is_attached_dialog ()" link="MetaWindow.html#meta-window-is-attached-dialog"/>
+    <keyword type="function" name="meta_window_get_mutter_hints ()" link="MetaWindow.html#meta-window-get-mutter-hints"/>
+    <keyword type="function" name="meta_window_get_frame_type ()" link="MetaWindow.html#meta-window-get-frame-type"/>
+    <keyword type="function" name="meta_window_get_frame_bounds ()" link="MetaWindow.html#meta-window-get-frame-bounds"/>
+    <keyword type="function" name="meta_window_get_tile_match ()" link="MetaWindow.html#meta-window-get-tile-match"/>
+    <keyword type="function" name="meta_window_make_fullscreen ()" link="MetaWindow.html#meta-window-make-fullscreen"/>
+    <keyword type="function" name="meta_window_unmake_fullscreen ()" link="MetaWindow.html#meta-window-unmake-fullscreen"/>
+    <keyword type="function" name="meta_window_make_above ()" link="MetaWindow.html#meta-window-make-above"/>
+    <keyword type="function" name="meta_window_unmake_above ()" link="MetaWindow.html#meta-window-unmake-above"/>
+    <keyword type="function" name="meta_window_shade ()" link="MetaWindow.html#meta-window-shade"/>
+    <keyword type="function" name="meta_window_unshade ()" link="MetaWindow.html#meta-window-unshade"/>
+    <keyword type="function" name="meta_window_stick ()" link="MetaWindow.html#meta-window-stick"/>
+    <keyword type="function" name="meta_window_unstick ()" link="MetaWindow.html#meta-window-unstick"/>
+    <keyword type="function" name="meta_window_kill ()" link="MetaWindow.html#meta-window-kill"/>
+    <keyword type="function" name="meta_window_focus ()" link="MetaWindow.html#meta-window-focus"/>
+    <keyword type="function" name="meta_window_check_alive ()" link="MetaWindow.html#meta-window-check-alive"/>
+    <keyword type="function" name="meta_window_get_work_area_current_monitor ()" link="MetaWindow.html#meta-window-get-work-area-current-monitor"/>
+    <keyword type="function" name="meta_window_get_work_area_for_monitor ()" link="MetaWindow.html#meta-window-get-work-area-for-monitor"/>
+    <keyword type="function" name="meta_window_get_work_area_all_monitors ()" link="MetaWindow.html#meta-window-get-work-area-all-monitors"/>
+    <keyword type="function" name="meta_window_begin_grab_op ()" link="MetaWindow.html#meta-window-begin-grab-op"/>
+    <keyword type="struct" name="MetaWindow" link="MetaWindow.html#MetaWindow-struct"/>
+    <keyword type="struct" name="MetaWindowClass" link="MetaWindow.html#MetaWindowClass"/>
+    <keyword type="enum" name="enum MetaWindowType" link="MetaWindow.html#MetaWindowType"/>
+    <keyword type="enum" name="enum MetaMaximizeFlags" link="MetaWindow.html#MetaMaximizeFlags"/>
+    <keyword type="property" name="The “above” property" link="MetaWindow.html#MetaWindow--above"/>
+    <keyword type="property" name="The “appears-focused” property" link="MetaWindow.html#MetaWindow--appears-focused"/>
+    <keyword type="property" name="The “decorated” property" link="MetaWindow.html#MetaWindow--decorated"/>
+    <keyword type="property" name="The “demands-attention” property" link="MetaWindow.html#MetaWindow--demands-attention"/>
+    <keyword type="property" name="The “fullscreen” property" link="MetaWindow.html#MetaWindow--fullscreen"/>
+    <keyword type="property" name="The “gtk-app-menu-object-path” property" link="MetaWindow.html#MetaWindow--gtk-app-menu-object-path"/>
+    <keyword type="property" name="The “gtk-application-id” property" link="MetaWindow.html#MetaWindow--gtk-application-id"/>
+    <keyword type="property" name="The “gtk-application-object-path” property" link="MetaWindow.html#MetaWindow--gtk-application-object-path"/>
+    <keyword type="property" name="The “gtk-menubar-object-path” property" link="MetaWindow.html#MetaWindow--gtk-menubar-object-path"/>
+    <keyword type="property" name="The “gtk-unique-bus-name” property" link="MetaWindow.html#MetaWindow--gtk-unique-bus-name"/>
+    <keyword type="property" name="The “gtk-window-object-path” property" link="MetaWindow.html#MetaWindow--gtk-window-object-path"/>
+    <keyword type="property" name="The “icon” property" link="MetaWindow.html#MetaWindow--icon"/>
+    <keyword type="property" name="The “maximized-horizontally” property" link="MetaWindow.html#MetaWindow--maximized-horizontally"/>
+    <keyword type="property" name="The “maximized-vertically” property" link="MetaWindow.html#MetaWindow--maximized-vertically"/>
+    <keyword type="property" name="The “mini-icon” property" link="MetaWindow.html#MetaWindow--mini-icon"/>
+    <keyword type="property" name="The “minimized” property" link="MetaWindow.html#MetaWindow--minimized"/>
+    <keyword type="property" name="The “mutter-hints” property" link="MetaWindow.html#MetaWindow--mutter-hints"/>
+    <keyword type="property" name="The “resizeable” property" link="MetaWindow.html#MetaWindow--resizeable"/>
+    <keyword type="property" name="The “skip-taskbar” property" link="MetaWindow.html#MetaWindow--skip-taskbar"/>
+    <keyword type="property" name="The “title” property" link="MetaWindow.html#MetaWindow--title"/>
+    <keyword type="property" name="The “urgent” property" link="MetaWindow.html#MetaWindow--urgent"/>
+    <keyword type="property" name="The “user-time” property" link="MetaWindow.html#MetaWindow--user-time"/>
+    <keyword type="property" name="The “window-type” property" link="MetaWindow.html#MetaWindow--window-type"/>
+    <keyword type="property" name="The “wm-class” property" link="MetaWindow.html#MetaWindow--wm-class"/>
+    <keyword type="signal" name="The “focus” signal" link="MetaWindow.html#MetaWindow-focus"/>
+    <keyword type="signal" name="The “position-changed” signal" link="MetaWindow.html#MetaWindow-position-changed"/>
+    <keyword type="signal" name="The “raised” signal" link="MetaWindow.html#MetaWindow-raised"/>
+    <keyword type="signal" name="The “size-changed” signal" link="MetaWindow.html#MetaWindow-size-changed"/>
+    <keyword type="signal" name="The “unmanaged” signal" link="MetaWindow.html#MetaWindow-unmanaged"/>
+    <keyword type="signal" name="The “workspace-changed” signal" link="MetaWindow.html#MetaWindow-workspace-changed"/>
+    <keyword type="function" name="meta_workspace_index ()" link="MetaWorkspace.html#meta-workspace-index"/>
+    <keyword type="function" name="meta_workspace_get_screen ()" link="MetaWorkspace.html#meta-workspace-get-screen"/>
+    <keyword type="function" name="meta_workspace_list_windows ()" link="MetaWorkspace.html#meta-workspace-list-windows"/>
+    <keyword type="function" name="meta_workspace_get_work_area_for_monitor ()" link="MetaWorkspace.html#meta-workspace-get-work-area-for-monitor"/>
+    <keyword type="function" name="meta_workspace_get_work_area_all_monitors ()" link="MetaWorkspace.html#meta-workspace-get-work-area-all-monitors"/>
+    <keyword type="function" name="meta_workspace_activate ()" link="MetaWorkspace.html#meta-workspace-activate"/>
+    <keyword type="function" name="meta_workspace_activate_with_focus ()" link="MetaWorkspace.html#meta-workspace-activate-with-focus"/>
+    <keyword type="function" name="meta_workspace_update_window_hints ()" link="MetaWorkspace.html#meta-workspace-update-window-hints"/>
+    <keyword type="function" name="meta_workspace_set_builtin_struts ()" link="MetaWorkspace.html#meta-workspace-set-builtin-struts"/>
+    <keyword type="function" name="meta_workspace_get_neighbor ()" link="MetaWorkspace.html#meta-workspace-get-neighbor"/>
+    <keyword type="struct" name="MetaWorkspace" link="MetaWorkspace.html#MetaWorkspace-struct"/>
+    <keyword type="struct" name="MetaWorkspaceClass" link="MetaWorkspace.html#MetaWorkspaceClass"/>
+    <keyword type="property" name="The “n-windows” property" link="MetaWorkspace.html#MetaWorkspace--n-windows"/>
+    <keyword type="signal" name="The “window-added” signal" link="MetaWorkspace.html#MetaWorkspace-window-added"/>
+    <keyword type="signal" name="The “window-removed” signal" link="MetaWorkspace.html#MetaWorkspace-window-removed"/>
+  </functions>
+</book>
